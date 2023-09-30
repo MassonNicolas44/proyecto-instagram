@@ -12,17 +12,17 @@ class Image extends Model
 
     //Relacion de uno a muchos
     public function comments(){
-        return $this->HasMany('App\Comment');
+        return $this->HasMany('App\Models\Comment');
     }
 
     //Relacion de uno a muchos
     public function likes(){
-        return $this->HasMany('App\Like');
+        return $this->HasMany('App\Models\Like');
     }
 
     //Relacion de muchos a uno
     public function user(){
-        return $this->belongsTo('App\User','user_id');
+        return $this->belongsTo('App\Models\User','user_id');
     }
 
     use HasFactory;

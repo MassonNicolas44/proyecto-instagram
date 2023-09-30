@@ -48,7 +48,7 @@ class User extends Authenticatable
 
     //Relacion de uno a muchos
     public function images(){
-        return $this->HasMany('App\Images');
+        return $this->HasMany('App\Models\Images');
     }
 
 }
