@@ -40,7 +40,7 @@
 
                 <div class="description">
                     <span class="nickname"> {{ '@'.$image->user->nick }} </span>
-                    <span class="nickname" date> {{' | '. \FormatTime:LongTimeFilter{$image->create_at}  }} </span>
+                    <span class="nickname date">{{' | '.\FormatTime::LongTimeFilter($image->created_at)}}</span>
                    <p> {{ $image->description }} </p>
                 </div>
                 <a href="" class="btn btn-info btn-comments">Comentarios ({{count($image->comments)}}) </a>

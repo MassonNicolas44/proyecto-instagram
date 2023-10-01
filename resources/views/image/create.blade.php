@@ -35,7 +35,7 @@
                         
 
                         @if ($errors->has('description'))
-                            <span class="invalid-feeback" role="alert">
+                            <span class="invalid-feedback" role="alert">
                                 <strong> {{$errors->first('description')}} </strong>
                             </span>
                         @endif
