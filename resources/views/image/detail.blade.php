@@ -32,7 +32,24 @@
                 </div>
 
                 <div class="likes">
-                    <img src="{{asset('img/corazonNegro.png')}}"/>
+
+                <?php $user_like=false; ?>
+
+                    @foreach($image->likes as $like)
+                        <!--Comprobacion si el usuario logeado le dio like a la imagen-->
+                        @if($like->user->id == Auth::user()->id)
+                            <?php $user_like=true; ?>
+                        @endif
+                    @endforeach
+
+                    @if($user_like)
+                        <img src="{{asset('img/corazonRojo.png')}}" data-id="{{ $image->id }}" class="btn-dislike"/>
+                    @else
+                        <img src="{{asset('img/corazonNegro.png')}}" data-id="{{ $image->id }}" class="btn-like"/>
+                    @endif
+
+                    {{count($image->likes)}}
+
                 </div>
 
                 <div class="description">
@@ -60,13 +77,13 @@
                         </button>
                     </form>
                 <hr>
-                @foreach($image->comments as$comment)
+                @foreach($image->comments as $comment)
                     <div class="comment">
                         <span class="nickname"> {{ '@'.$comment->user->nick }} </span>
                         <span class="nickname date">{{' | '.\FormatTime::LongTimeFilter($comment->created_at)}}</span>
                         <p> {{ $comment->content }} </p>
                             @if($Auth::check() && ($comment->user_id == Auth::user()->id || $comment->image->user_id == Auth::user()->id))
-                                <a href="{{ route('comment.delete', ['id'=>$comment->id]') }}" class="btn btn-sm btn-danger">
+                                <a href="{{ route('comment.delete', ['id'=>$comment->id]) }}" class="btn btn-sm btn-danger">
                                     Eliminar Comentario
                                 </a>
                             @endif

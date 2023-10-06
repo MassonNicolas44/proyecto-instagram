@@ -18,7 +18,7 @@ class ImageController extends Controller
 
     public function create()
     {
-        return view('images.create');
+        return view('image.create');
     }
 
     public function save(Request $request)

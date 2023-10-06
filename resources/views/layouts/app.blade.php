@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,10 +15,18 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="{{ asset('js/main.js') }}" defer></script> 
+	
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+
+
+
 </head>
 <body>
     <div id="app">
@@ -54,7 +63,11 @@
                         @else
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Inicio</a>
+                            <a class="nav-link" href="{{ route('home') }}">Inicio |</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('likes') }}">Like Imagenes |</a>
                         </li>
 
                         <li class="nav-item">
