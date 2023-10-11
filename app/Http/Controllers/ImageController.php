@@ -116,6 +116,8 @@ class ImageController extends Controller
 		$user = \Auth::user();
 		$image = Image::find($id);
 		
+	
+		
 		if($user && $image && $image->user->id == $user->id){
 			return view('image.edit', [
 				'image' => $image
