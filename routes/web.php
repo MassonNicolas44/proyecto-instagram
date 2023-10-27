@@ -27,6 +27,7 @@ Route::get('/configuracion', [App\Http\Controllers\UserController::class, 'confi
 Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 Route::get('/users/avatar/{filename}', [App\Http\Controllers\UserController::class, 'getImage'])->name('user.avatar');
 Route::get('/perfil/{id}', [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
+Route::get('/gente/{search?}', [App\Http\Controllers\UserController::class, 'search'])->name('user.search');
 
 //ImageController
 Route::get('/subir-imagen', [App\Http\Controllers\ImageController::class, 'create'])->name('image.create');

@@ -58,7 +58,7 @@ class ImageController extends Controller
         $image->save();
 
         //Redireccion de la pagina
-        return redirect()->route('home')->with(['message' => 'Image creada correctamente']);
+        return redirect()->route('home')->with(['message' => 'Imagen creada correctamente']);
     }
 
     public function getImage($filename)

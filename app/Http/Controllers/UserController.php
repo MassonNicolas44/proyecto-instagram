@@ -21,6 +21,21 @@ class UserController extends Controller
         return view('user.config');
     }
 
+    public function search($search=null)
+    {
+        if(!empty($search)){
+            $users = User::where('nick','LIKE','%'.$search.'%')
+            ->orwhere('name','LIKE','%'.$search. '%')
+            ->orwhere('surname','LIKE','%'.$search. '%')
+            ->take(5)
+            ->get();
+        }else{      
+        $users = User::all();
+        }
+
+        return view('user.search',['users'=>$users]);
+    }
+
     public function update(Request $request)
     {
 

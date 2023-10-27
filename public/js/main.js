@@ -49,4 +49,12 @@ window.addEventListener("load", function () {
     }
     dislike();
 
+//Buscador de perfiles
+$('#buscador').submit(function(e){
+
+    $(this).attr('action',url+'/gente/'+$('#buscador #search').val())
+
+})
+
+
 });

@@ -51,27 +51,31 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Inicio |</a>
+                            <a class="nav-link" href="{{ route('home') }}">Inicio -</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('likes') }}">Like Imagenes |</a>
+                            <a class="nav-link" href="{{ route('user.search') }}">Perfiles -</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" href=" {{ route('image.create')}} ">Subir Imagen</a>
+                            <a class="nav-link" href="{{ route('likes') }}">Like Imagenes -</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href=" {{ route('image.create')}} ">Subir Imagen -</a>
                         </li>
                         <li>
                         @include('includes.avatar')

@@ -112,6 +112,7 @@
                     <a href="{{ route('comment.delete', ['id'=>$comment->id]) }}" class="btn btn-sm btn-danger">
                         Eliminar Comentario
                         </a>
+                        <hr>
                         @endif
                         </div>
                         @endforeach
